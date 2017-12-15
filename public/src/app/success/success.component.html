@@ -1,0 +1,15 @@
+<a href="#" (click)="logout()">Log Out</a>
+<div class="users_list">
+<input type="text" name="search" [(ngModel)]="searchTerm" (keyup)="searchUsers(searchTerm)">
+<table >
+	<tr>
+		<td>Name:</td>
+		<td>Email:</td>
+	</tr>
+	<tr *ngFor="let user of shownUsers">
+		<td><a [routerLink]="['/users', user._id]">{{user.name}}</a></td>
+		<td>{{user.email}}</td>
+	</tr>
+</table>
+
+</div>

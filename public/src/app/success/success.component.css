@@ -1,0 +1,5 @@
+.users_list{
+	height:100px;
+	overflow: scroll;
+	width:250px;
+}
