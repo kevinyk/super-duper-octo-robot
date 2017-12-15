@@ -77,22 +77,22 @@ module.exports = {
 			}
 		})
 	},
-	success: function(req,res){
-		// Search for the user in session
-		if(req.session.userId != undefined){
-			User.findOne({_id: req.session.userId}, function(err, foundUser){
-				if(err){
-					console.log('something went wrong');
-					res.send(err);
-				}else{
-					console.log('found user in session');
-					res.render('success', {currentUser: foundUser});
-				}
-			})
-		}else{
-			res.redirect('/')
-		}
-	},
+	// success: function(req,res){
+	// 	// Search for the user in session
+	// 	if(req.session.userId != undefined){
+	// 		User.findOne({_id: req.session.userId}, function(err, foundUser){
+	// 			if(err){
+	// 				console.log('something went wrong');
+	// 				res.json(err);
+	// 			}else{
+	// 				console.log('found user in session');
+	// 				res.render('success', {currentUser: foundUser});
+	// 			}
+	// 		})
+	// 	}else{
+	// 		res.redirect('/')
+	// 	}
+	// },
 	getCurrent: function(req,res){
 		User.findOne({_id: req.session.userId}).exec(function(err, foundUser){
 			console.log('foundUser', foundUser);
